@@ -5,4 +5,5 @@ RUN  cd /build/ && go get github.com/cyphar/filepath-securejoin &&\
      go build /build/trivylogger.go && mkdir /app/ && \
      mkdir /app/files/ && cp /build/trivylogger /app/trivylogger
 
-ENTRYPOINT ["/app/trivylogger"]
+WORKDIR "/app"
+ENTRYPOINT "/app/trivylogger"
